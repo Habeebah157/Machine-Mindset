@@ -61,8 +61,8 @@ const PostPage: FC = () => {
 						repoId="R_kgDOPOg91Q"
 						category="Q&A"
 						categoryId="DIC_kwDOPOg91c4CtHl5"
-						mapping="title"
-						term={number} // use the URL number here
+						mapping="pathname"
+						// Remove the term prop when using pathname
 						reactionsEnabled="1"
 						emitMetadata="1"
 						inputPosition="top"
