@@ -55,19 +55,20 @@ const PostPage: FC = () => {
 								}}
 							/>
 							<Giscus
-          repo="Habeebah157/Machine-Mindset"
-          repoId="R_kgDOPOg91Q"
-          category="Blog" // replace with your actual category name
-          categoryId="DIC_kwDOPOg91c4Cf9kb" // replace with your actual category ID
-          mapping="number"
-          term={post.number.toString()}
-          reactionsEnabled="1"
-          emitMetadata="1"
-          inputPosition="top"
-          theme="purple_dark"
-          lang="en"
-          loading="lazy"
-        />
+  repo="Habeebah157/Machine-Mindset"
+  repoId="R_kgDOPOg91Q"
+  category="Q&A"
+  categoryId="DIC_kwDOPOg91c4CtHl5"
+  mapping="number"
+  term={post.number.toString()}
+  reactionsEnabled="1"
+  emitMetadata="1"
+  inputPosition="top"
+  theme="purple_dark"
+  lang="en"
+  loading="lazy"
+/>
+
 						</div>
 				  )}
 		</Layout>
