@@ -56,19 +56,13 @@ const PostPage: FC = () => {
 					/>
 
 					<Giscus
-						id="comments"
-						repo="Habeebah157/Machine-Mindset"
-						repoId="R_kgDOPOg91Q"
-						category="Announcements"
-						categoryId="DIC_kwDOPOg91c4CtHl3"
-						mapping="pathname"
-						strict="0"
-						reactionsEnabled="1"
-						emitMetadata="1"
-						inputPosition="top"
-						theme="preferred_color_scheme"
-						lang="en"
-						loading="lazy"
+							repo={`${CONFIG.BLOG.username}/${CONFIG.BLOG.repo}`}
+							repoId={CONFIG.BLOG.repo_id}
+							mapping="number"
+							term={post.number.toString()}
+							reactionsEnabled="1"
+							theme="light"
+							emitMetadata="1"
 						/>
 				</div>
 			) : null}
