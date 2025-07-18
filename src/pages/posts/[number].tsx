@@ -61,7 +61,7 @@ const PostPage: FC = () => {
 						repoId="R_kgDOPOg91Q"
 						category="Q&A"
 						categoryId="DIC_kwDOPOg91c4CtHl5"
-						mapping="number"
+						mapping="title"
 						term={number} // use the URL number here
 						reactionsEnabled="1"
 						emitMetadata="1"
