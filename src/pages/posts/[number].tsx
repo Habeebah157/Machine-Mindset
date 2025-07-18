@@ -58,7 +58,7 @@ const PostPage: FC = () => {
 					<Giscus
 							repo={`${CONFIG.BLOG.username}/${CONFIG.BLOG.repo}`}
 							repoId={CONFIG.BLOG.repo_id}
-							mapping="number"
+							mapping="pathname"
 							term={post.number.toString()}
 							reactionsEnabled="1"
 							theme="light"
