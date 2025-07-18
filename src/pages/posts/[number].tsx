@@ -56,20 +56,17 @@ const PostPage: FC = () => {
 					/>
 
 					<Giscus
-						id="comments"
-						repo="Habeebah157/Machine-Mindset"
-						repoId="R_kgDOPOg91Q"
-						category="Q&A"
-						categoryId="DIC_kwDOPOg91c4CtHl5"
-						mapping="pathname"
-						// Remove the term prop when using pathname
-						reactionsEnabled="1"
-						emitMetadata="1"
-						inputPosition="top"
-						theme="purple_dark"
-						lang="en"
-						loading="lazy"
-					/>
+					repo="Habeebah157/Machine-Mindset"
+					repoId="R_kgDOPOg91Q"
+					category="General"  // Try with General category first
+					categoryId="DIC_kwDOPOg91c4CtHl5"
+					mapping="pathname"  // Switch to pathname mapping
+					reactionsEnabled="1"
+					emitMetadata="0"
+					inputPosition="top"
+					theme="light"
+					lang="en"
+				/>
 				</div>
 			) : null}
 		</Layout>
