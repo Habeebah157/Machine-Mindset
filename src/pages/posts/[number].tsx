@@ -43,6 +43,7 @@ const PostPage: FC = () => {
 							<img
 								src={post.author.avatarUrl}
 								className="mx-2 h-10 w-10 rounded-full"
+								alt={`${post.author.login} avatar`}
 							/>
 							{post.author.login}
 						</a>
@@ -55,15 +56,19 @@ const PostPage: FC = () => {
 						}}
 					/>
 
-					<Giscus
-							repo={`${CONFIG.BLOG.username}/${CONFIG.BLOG.repo}`}
-							repoId={CONFIG.BLOG.repo_id}
-							mapping="pathname"
-							term={post.number.toString()}
-							reactionsEnabled="1"
-							theme="light"
-							emitMetadata="1"
-						/>
+					{/* <Giscus
+						repo="Habeebah157/Machine-Mindset"
+						repoId="R_kgDOPOg91Q"
+						category="Announcements"
+						categoryId="DIC_kwDOPOg91c4CtHl3"
+						mapping="pathname"
+						strict="0"
+						reactionsEnabled="1"
+						emitMetadata="0"
+						inputPosition="bottom"
+						theme="preferred_color_scheme"
+						lang="en"
+					/> */}
 				</div>
 			) : null}
 		</Layout>

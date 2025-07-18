@@ -23,7 +23,7 @@
 	},
 	"dependencies": {
 		"@apollo/client": "^3.6.9",
-		"@giscus/react": "^2.2.0",
+		"@giscus/react": "^2.4.0",
 		"@tailwindcss/typography": "^0.5.7",
 		"calculate-readtime": "^0.0.3",
 		"graphql": "^16.6.0",
