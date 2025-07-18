@@ -9,7 +9,7 @@ import useSWR from "swr";
 
 const PostPage: FC = () => {
 	const location = useLocation();
-	const number = location.pathname.split("/")[2];
+	const number = location.pathname.split("/")[2]; // post number from URL
 
 	const { data: post, error } = useSWR(`/posts/${number}`, async () => {
 		const post = await getPostData(parseInt(number));
@@ -29,48 +29,49 @@ const PostPage: FC = () => {
 
 	return (
 		<Layout title={post?.title || "Post"} loading={!post && !error}>
-			{error
-				? "error"
-				: post && (
-						<div className="container mx-auto pb-10">
-							<div className="mx-auto flex items-center justify-center">
-								Author:
-								<a
-									target="_blank"
-									href={`https://github.com/${post.author.login}`}
-									className="flex cursor-pointer items-center text-blue-500 hover:text-blue-600 hover:underline"
-								>
-									<img
-										src={post.author.avatarUrl}
-										className="mx-2 h-10 w-10 rounded-full"
-									/>
-
-									{post.author.login}
-								</a>
-							</div>
-							<div
-								className="prose mx-auto"
-								dangerouslySetInnerHTML={{
-									__html: post.bodyHTML,
-								}}
+			{error ? (
+				"error"
+			) : post ? (
+				<div className="container mx-auto pb-10">
+					<div className="mx-auto flex items-center justify-center">
+						Author:
+						<a
+							target="_blank"
+							href={`https://github.com/${post.author.login}`}
+							className="flex cursor-pointer items-center text-blue-500 hover:text-blue-600 hover:underline"
+						>
+							<img
+								src={post.author.avatarUrl}
+								className="mx-2 h-10 w-10 rounded-full"
 							/>
-							<Giscus
-  repo="Habeebah157/Machine-Mindset"
-  repoId="R_kgDOPOg91Q"
-  category="Q&A"
-  categoryId="DIC_kwDOPOg91c4CtHl5"
-  mapping="number"
-  term={post.number.toString()}
-  reactionsEnabled="1"
-  emitMetadata="1"
-  inputPosition="top"
-  theme="purple_dark"
-  lang="en"
-  loading="lazy"
-/>
+							{post.author.login}
+						</a>
+					</div>
 
-						</div>
-				  )}
+					<div
+						className="prose mx-auto"
+						dangerouslySetInnerHTML={{
+							__html: post.bodyHTML,
+						}}
+					/>
+
+					<Giscus
+						id="comments"
+						repo="Habeebah157/Machine-Mindset"
+						repoId="R_kgDOPOg91Q"
+						category="Q&A"
+						categoryId="DIC_kwDOPOg91c4CtHl5"
+						mapping="number"
+						term={number} // use the URL number here
+						reactionsEnabled="1"
+						emitMetadata="1"
+						inputPosition="top"
+						theme="purple_dark"
+						lang="en"
+						loading="lazy"
+					/>
+				</div>
+			) : null}
 		</Layout>
 	);
 };
