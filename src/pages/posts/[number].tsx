@@ -56,17 +56,20 @@ const PostPage: FC = () => {
 					/>
 
 					<Giscus
-					repo="Habeebah157/Machine-Mindset"
-					repoId="R_kgDOPOg91Q"
-					category="General"  // Try with General category first
-					categoryId="DIC_kwDOPOg91c4CtHl5"
-					mapping="pathname"  // Switch to pathname mapping
-					reactionsEnabled="1"
-					emitMetadata="0"
-					inputPosition="top"
-					theme="light"
-					lang="en"
-				/>
+						id="comments"
+						repo="Habeebah157/Machine-Mindset"
+						repoId="R_kgDOPOg91Q"
+						category="Announcements"
+						categoryId="DIC_kwDOPOg91c4CtHl3"
+						mapping="pathname"
+						strict="0"
+						reactionsEnabled="1"
+						emitMetadata="1"
+						inputPosition="top"
+						theme="preferred_color_scheme"
+						lang="en"
+						loading="lazy"
+						/>
 				</div>
 			) : null}
 		</Layout>
