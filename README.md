@@ -1,22 +1,3 @@
-# 🥸 Vite React Blog Template
-
--   Blog template made with Vite, React, Tailwind, and TypeScript.
--   Blog server depends on GitHub Discussions, see how It works [here (TR)](https://338.rocks/blog/post/14/).
--   See [Live Demo here](https://vite-react-blog-template.vercel.app/)!
-
-# 🤓 Setup
-
--   Clone repo:
-    -   Clone using git: `git clone https://github.com/barbarbar338/vite-react-blog-template`
-    -   Clone using gh: `gh repo clone barbarbar338/vite-react-blog-template`
-    -   Use template button on GitHub
--   Download dependencies:
-    -   Using npm: `npm install`
-    -   Using yarn: `yarn`
--   Create `.env` file and fill it with your GitHub token:
-    -   Create a GitHub token with `read:discussion` scope
-    -   Set your token in `.env` file: `VITE_GITHUB_TOKEN=ghp_MyToken`
--   Edit `src/utils/config.ts` file and fill it with your information.
--   Run app:
-    -   Using npm: `npm run dev`
-    -   Using yarn: `yarn dev`
+𝙷𝚎𝚢 𝚝𝚑𝚎𝚛𝚎 🙂,    
+**𝚆𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚖𝚢 𝚕𝚒𝚝𝚝𝚕𝚎 𝚌𝚘𝚛𝚗𝚎𝚛 𝚘𝚏 𝚝𝚑𝚎 𝙰𝙸 𝚞𝚗𝚒𝚟𝚎𝚛𝚜𝚎!**  
+𝙸 am 𝚘𝚗 𝚊 *𝚎𝚡𝚌𝚒𝚝𝚒𝚗𝚐 𝚓𝚘𝚞𝚛𝚗𝚎𝚢* 𝚕𝚎𝚊𝚛𝚗𝚒𝚗𝚐 𝚊𝚕𝚕 𝚝𝚑𝚒𝚗𝚐𝚜 𝙰𝙸, 𝚊𝚗𝚍 𝙸 𝚝𝚑𝚘𝚞𝚐𝚑𝚝—𝚠𝚑𝚢 𝚗𝚘𝚝 𝚋𝚛𝚒𝚗𝚐 𝚢𝚘𝚞 𝚊𝚕𝚘𝚗𝚐?  𝙷𝚎𝚛𝚎, 𝚢𝚘𝚞 guys will 𝚏𝚒𝚗𝚍 𝚝𝚞𝚝𝚘𝚛𝚒𝚊𝚕𝚜, 𝚝𝚒𝚙𝚜, 𝚊𝚗𝚍 𝚌𝚘𝚘𝚕 𝚜𝚝𝚞𝚏𝚏 𝙸 𝚙𝚒𝚌𝚔 𝚞𝚙 𝚊𝚜 𝙸 𝚐𝚘. 𝚆𝚑𝚎𝚝𝚑𝚎𝚛 𝚢𝚘𝚞 are 𝚊 𝚗𝚎𝚠𝚋𝚒𝚎 𝚘𝚛 𝚊 𝚏𝚎𝚕𝚕𝚘𝚠 𝚎𝚡𝚙𝚕𝚘𝚛𝚎𝚛, 𝚝𝚑𝚎𝚛𝚎 is 𝚜𝚘𝚖𝚎𝚝𝚑𝚒𝚗𝚐 𝚏𝚘𝚛 𝚎𝚟𝚎𝚛𝚢𝚘𝚗𝚎!  𝚃𝚑𝚊𝚗𝚔𝚜 𝚏𝚘𝚛 𝚜𝚝𝚘𝚙𝚙𝚒𝚗𝚐 𝚋𝚢—𝚕𝚎𝚝’𝚜 𝚖𝚊𝚔𝚎 𝙰𝙸 𝚏𝚞𝚗 𝚝𝚘𝚐𝚎𝚝𝚑𝚎𝚛! 🚀🤖
