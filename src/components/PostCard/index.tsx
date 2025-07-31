@@ -21,20 +21,24 @@ export const PostCard: FC<IPost> = ({
 	}
 
 	return (
-		<div className="mb-7 rounded bg-white p-6 shadow-lg focus:outline-none lg:mr-7 lg:mb-0 lg:w-4/12">
+		<div className="mb-7 roundedp-6 focus:outline-none lg:mr-7 lg:mb-0 my-5 w-full m-3">
 			<div className="flex items-center border-b border-gray-200 pb-6">
-				<img
+				{/* <img
 					src={author.avatarUrl}
 					alt={author.login}
 					className="h-12 w-12 rounded-full"
-				/>
+				/> */}
 				<div className="flex w-full items-start justify-between">
 					<div className="w-full pl-3">
 						<Link
 							to={`/posts/${number}`}
 							className="cursor-pointer text-xl font-medium leading-5 text-gray-800 hover:underline focus:outline-none"
 						>
-							{title}
+							<h1 className="text-white">
+								{title}
+
+							</h1>
+							
 						</Link>
 						<p className="flex items-center pt-2 text-sm leading-normal text-gray-500 focus:outline-none">
 							<Calendar className="mr-1 h-4 w-4" /> {createdAt} -{" "}
@@ -52,7 +56,7 @@ export const PostCard: FC<IPost> = ({
 					</div>
 				</div>
 			</div>
-			<div className="px-2">
+			{/* <div className="px-2">
 				<p
 					className="py-4 text-sm leading-5 text-gray-600 focus:outline-none"
 					dangerouslySetInnerHTML={{
@@ -69,7 +73,7 @@ export const PostCard: FC<IPost> = ({
 						/>
 					))}
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

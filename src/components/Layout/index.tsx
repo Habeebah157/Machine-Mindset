@@ -4,20 +4,20 @@ import { Navbar } from "./Navbar";
 import { Preloader } from "./Preloader";
 
 export interface ILayout {
-	children: React.ReactNode;
-	title: string;
-	addition?: string;
-	loading?: boolean;
+  children: React.ReactNode;
+  title: string;
+  addition?: string;
+  loading?: boolean;
 }
 
 export const Layout: FC<ILayout> = ({ children, title, addition, loading }) => {
-	return (
-		<>
-			<Helmet>
-				<title>{title} - Vite React Blog Template</title>
-			</Helmet>
-			<Navbar addition={addition} />
-			{loading ? <Preloader /> : children}
-		</>
-	);
+  return (
+    <div className="bg-blue">
+      <Helmet>
+        <title>{title} - Machine Mind</title>
+      </Helmet>
+      <Navbar addition={addition} />
+      {loading ? <Preloader /> : children}
+    </div>
+  );
 };

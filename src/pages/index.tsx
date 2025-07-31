@@ -12,22 +12,26 @@ const HomePage: FC = () => {
 	});
 
 	return (
-		<Layout title="Home" loading={!posts && !error}>
-			{error
-				? "error"
-				: posts &&
-				  chunk(posts, 2).map((postList, idx) => (
-						<div
-							key={idx}
-							className="my-2 w-full items-center justify-center lg:flex"
-						>
-							{postList.map((post, idx) => (
-								<PostCard {...{ key: idx, ...post }} />
-							))}
-						</div>
-				  ))}
-		</Layout>
-	);
+  <Layout title="Home" loading={!posts && !error}>
+    <div className=" px-6 mx-10">
+      {error ? (
+        "error"
+      ) : (
+        posts &&
+        chunk(posts, 2).map((postList, idx) => (
+          <div
+            key={idx}
+            className="my-5 w-full items-center justify-center lg:flex lg:flex-col mx-5"
+          >
+            {postList.map((post, idx) => (
+              <PostCard key={idx} {...post} />
+            ))}
+          </div>
+        ))
+      )}
+    </div>
+  </Layout>
+);
 };
 
 export default HomePage;

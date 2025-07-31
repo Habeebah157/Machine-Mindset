@@ -50,7 +50,7 @@ const PostPage: FC = () => {
 					</div>
 
 					<div
-						className="prose mx-auto"
+						className="prose prose-invert mx-auto"
 						dangerouslySetInnerHTML={{
 							__html: post.bodyHTML,
 						}}
