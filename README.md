@@ -6,7 +6,6 @@
 > Thanks for stopping by—let’s make AI fun together! 🚀🤖
 
 
-<<<<<<< HEAD
 # 🤓 Setup
 
 -   Clone repo:
@@ -64,6 +63,6 @@ This link opens the Colab notebook where you can train your own season classific
     # text in gray (comments)
     @@ text in purple (and bold)@@ (hunk markers or important notes)
 -->
-=======
+
 [comment]: <> (https://www.makeareadme.com/)
->>>>>>> 549741b7ae04ca4e3f1635d4aedf6d09da852abf
+

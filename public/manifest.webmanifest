@@ -1,7 +1,7 @@
 {
-	"short_name": "Vite + React + TS + Router + Tailwind",
-	"name": "Home - Vite + React + TS + Router + Tailwind",
-	"description": "Vite + React + TS + Router + Tailwind template",
+	"short_name": "Machine Mindset",
+	"name": "Machine Mindset Blog",
+	"description": "Blog about AI, Machine Learning, and more",
 	"start_url": "/",
 	"scope": ".",
 	"display": "standalone",
@@ -9,27 +9,27 @@
 	"theme_color": "#6D28D9",
 	"icons": [
 		{
-			"src": "/icons/512x512.png",
+			"src": "/icons/machineheart.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		},
 		{
-			"src": "/icons/256x256.png",
+			"src": "/icons/machineheart.png",
 			"type": "image/png",
 			"sizes": "256x256"
 		},
 		{
-			"src": "/icons/192x192.png",
+			"src": "/icons/machineheart.png",
 			"type": "image/png",
 			"sizes": "196x196"
 		},
 		{
-			"src": "/icons/128x128.png",
+			"src": "/icons/machineheart.png",
 			"type": "image/png",
 			"sizes": "128x128"
 		},
 		{
-			"src": "/icons/96x96.png",
+			"src": "/icons/machineheart.png",
 			"type": "image/png",
 			"sizes": "96x96"
 		}
