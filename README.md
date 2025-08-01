@@ -66,7 +66,11 @@ This link opens the Colab notebook where you can train your own season classific
     @@ text in purple (and bold)@@ (hunk markers or important notes)
 
     I want to add accessibility like code path
+    add audio
+    Web Speech API 
 -->
+
+
 
 [comment]: <> (https://www.makeareadme.com/)
 
