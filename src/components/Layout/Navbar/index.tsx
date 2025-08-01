@@ -10,12 +10,21 @@ export const Navbar: FC<INavbar> = ({ addition }) => (
 		<h1 className="text-center text-4xl font-bold">
 			<Link to="/" className="cursor-pointer hover:underline">
 			<span
-			className="text-5xl font-extrabold text-transparent bg-[linear-gradient(110deg,#ffffff_25%,#d1d5db_50%,#ffffff_75%)] bg-clip-text bg-[length:200%_100%] animate-shine"
-			>
-			<span className="typing">
-				MACHINE MINDSET
-			</span>
-			</span>
+      className="text-5xl font-extrabold text-transparent bg-[linear-gradient(110deg,#ffffff_25%,#d1d5db_50%,#ffffff_75%)] bg-clip-text bg-[length:200%_100%] animate-shine"
+    >
+      {/* Mobile: plain text */}
+      <span className="block md:hidden text-white">
+        MACHINE MINDSET
+      </span>
+
+      {/* Medium+ screens: typing animation */}
+      <span className="hidden md:inline typing">
+        MACHINE MINDSET
+      </span>
+    </span>
+  );
+
+
 
 
 

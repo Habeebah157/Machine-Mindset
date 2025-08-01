@@ -20,7 +20,12 @@
     animation:
       typing 3s steps(15, end) forwards,
       blink-caret 0.75s step-end infinite;
-    width: 0;
-    display: inline-block;
+  }
+
+  @media (min-width: 768px) {
+    .typing {
+      display: inline-block;
+      width: 0;
+    }
   }
 }
