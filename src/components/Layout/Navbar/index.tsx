@@ -9,9 +9,14 @@ export const Navbar: FC<INavbar> = ({ addition }) => (
 	<div className="mx-auto py-5">
 		<h1 className="text-center text-4xl font-bold">
 			<Link to="/" className="cursor-pointer hover:underline">
-			<span className="text-5xl font-extrabold text-transparent bg-[linear-gradient(110deg,#ffffff_25%,#d1d5db_50%,#ffffff_75%)] bg-clip-text bg-[length:200%_100%] animate-shine">
-			MACHINE MINDSET
+			<span
+			className="text-5xl font-extrabold text-transparent bg-[linear-gradient(110deg,#ffffff_25%,#d1d5db_50%,#ffffff_75%)] bg-clip-text bg-[length:200%_100%] animate-shine"
+			>
+			<span className="typing">
+				MACHINE MINDSET
 			</span>
+			</span>
+
 
 
 				
