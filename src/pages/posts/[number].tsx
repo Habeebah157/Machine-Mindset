@@ -56,7 +56,7 @@ const PostPage: FC = () => {
 						}}
 					/>
 
-					{/* <Giscus
+					{ <Giscus
 						repo="Habeebah157/Machine-Mindset"
 						repoId="R_kgDOPOg91Q"
 						category="Announcements"
@@ -68,7 +68,7 @@ const PostPage: FC = () => {
 						inputPosition="bottom"
 						theme="preferred_color_scheme"
 						lang="en"
-					/> */}
+					/> }
 				</div>
 			) : null}
 		</Layout>
