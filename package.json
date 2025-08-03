@@ -1,5 +1,5 @@
 {
-	"name": "vite-react-blog-template",
+	"name": "machine-mindset",
 	"private": true,
 	"version": "1.0.0",
 	"type": "module",
@@ -26,6 +26,7 @@
 		"@giscus/react": "^2.4.0",
 		"@tailwindcss/typography": "^0.5.7",
 		"calculate-readtime": "^0.0.3",
+		"date-fns": "^4.1.0",
 		"graphql": "^16.6.0",
 		"highlight.js": "^11.6.0",
 		"moment": "^2.29.4",
