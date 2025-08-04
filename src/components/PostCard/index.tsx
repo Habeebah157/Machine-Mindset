@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ExternalLink } from "react-feather";
 import { Label } from "@components/PostCard/Label";
-import { subDays, format } from "date-fns";
+import { format } from "date-fns";
 
 interface IPost {
   author: any;
@@ -14,20 +14,40 @@ interface IPost {
   number: number;
 }
 
-function parseRelativeDate(dateStr: string): Date | null {
+// Use the same parseDateString function as in HomePage
+function parseDateString(dateStr: string): Date | null {
   if (!dateStr) return null;
 
-  // Match "Yesterday at hh:mm AM/PM"
-  const yesterdayMatch = dateStr.match(/Yesterday at (\d{1,2}):(\d{2}) (AM|PM)/i);
-  if (yesterdayMatch) {
-    let [, hourStr, minuteStr, ampm] = yesterdayMatch;
+  const now = new Date();
+
+  let match = dateStr.match(/Today at (\d{1,2}):(\d{2}) (AM|PM)/i);
+  if (match) {
+    let [, hourStr, minuteStr, ampm] = match;
     let hour = parseInt(hourStr, 10);
     const minute = parseInt(minuteStr, 10);
-
     if (ampm.toUpperCase() === "PM" && hour !== 12) hour += 12;
     if (ampm.toUpperCase() === "AM" && hour === 12) hour = 0;
 
-    const yesterday = subDays(new Date(), 1);
+    return new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      hour,
+      minute
+    );
+  }
+
+  match = dateStr.match(/Yesterday at (\d{1,2}):(\d{2}) (AM|PM)/i);
+  if (match) {
+    let [, hourStr, minuteStr, ampm] = match;
+    let hour = parseInt(hourStr, 10);
+    const minute = parseInt(minuteStr, 10);
+    if (ampm.toUpperCase() === "PM" && hour !== 12) hour += 12;
+    if (ampm.toUpperCase() === "AM" && hour === 12) hour = 0;
+
+    const yesterday = new Date(now);
+    yesterday.setDate(now.getDate() - 1);
+
     return new Date(
       yesterday.getFullYear(),
       yesterday.getMonth(),
@@ -37,12 +57,10 @@ function parseRelativeDate(dateStr: string): Date | null {
     );
   }
 
-  // Try parsing normal date strings (ISO, etc)
   const parsed = new Date(dateStr);
   return isNaN(parsed.getTime()) ? null : parsed;
 }
 
-// Your "calculate" function that returns reading time
 function calculate(text: string): string {
   const words = text.trim().split(/\s+/).length;
   const minutes = Math.ceil(words / 200);
@@ -65,11 +83,10 @@ export const PostCard: FC<IPost> = ({
     description.push(parts.shift());
   }
 
-  console.log(createdAt);
-  const parsedDate = parseRelativeDate(createdAt);
+  console.log("Raw createdAt:", createdAt);
+  const parsedDate = parseDateString(createdAt);
   if (!parsedDate) console.error("Invalid date on post:", { title, createdAt });
 
-  // Use "PPP" format to show date only (e.g., Aug 3, 2025)
   const displayDate = parsedDate ? format(parsedDate, "PPP") : createdAt;
 
   return (

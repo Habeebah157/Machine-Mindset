@@ -4,14 +4,76 @@ import { Layout } from "@components/Layout";
 import { getPosts } from "@utils/graphql";
 import useSWR from "swr";
 
-function getEmojiForMonth(month: string) {
-  const monthEmojis = [
-    "❄️", "🌸", "☀️", "🍂", "💖", "☁️", "✨", "🔥", "🍁",
-  ];
-  const hash = month
-    .split("")
-    .reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  return monthEmojis[hash % monthEmojis.length];
+// Unified date parsing function
+function parseDateString(dateStr: string): Date | null {
+  if (!dateStr) return null;
+
+  const now = new Date();
+
+  // Handle "Today at hh:mm AM/PM"
+  let match = dateStr.match(/Today at (\d{1,2}):(\d{2}) (AM|PM)/i);
+  if (match) {
+    let [, hourStr, minuteStr, ampm] = match;
+    let hour = parseInt(hourStr, 10);
+    const minute = parseInt(minuteStr, 10);
+    if (ampm.toUpperCase() === "PM" && hour !== 12) hour += 12;
+    if (ampm.toUpperCase() === "AM" && hour === 12) hour = 0;
+
+    return new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      hour,
+      minute
+    );
+  }
+
+  // Handle "Yesterday at hh:mm AM/PM"
+  match = dateStr.match(/Yesterday at (\d{1,2}):(\d{2}) (AM|PM)/i);
+  if (match) {
+    let [, hourStr, minuteStr, ampm] = match;
+    let hour = parseInt(hourStr, 10);
+    const minute = parseInt(minuteStr, 10);
+    if (ampm.toUpperCase() === "PM" && hour !== 12) hour += 12;
+    if (ampm.toUpperCase() === "AM" && hour === 12) hour = 0;
+
+    const yesterday = new Date(now);
+    yesterday.setDate(now.getDate() - 1);
+
+    return new Date(
+      yesterday.getFullYear(),
+      yesterday.getMonth(),
+      yesterday.getDate(),
+      hour,
+      minute
+    );
+  }
+
+  // Try ISO or standard date parsing
+  const parsed = new Date(dateStr);
+  return isNaN(parsed.getTime()) ? null : parsed;
+}
+
+// Simplified, clearer emoji per month
+function getEmojiForMonth(monthYear: string) {
+  const month = monthYear.split(" ")[0].toLowerCase();
+
+  const monthEmojiMap: Record<string, string> = {
+    january: "🎴",
+    february: "🫀",
+    march: "🌸",
+    april: "📕",
+    may: "☀️",
+    june: "💐",
+    july: "☁️",
+    august: "💖",
+    september: "🍁",
+    october: "🌼",
+    november: "🍂",
+    december: "❄️",
+  };
+
+  return monthEmojiMap[month] || "✨";
 }
 
 const HomePage: FC = () => {
@@ -26,8 +88,14 @@ const HomePage: FC = () => {
     return posts.reduce((acc: Record<string, typeof posts>, post) => {
       if (!post.createdAt) return acc;
 
-      const date = new Date(post.createdAt);
-      if (isNaN(date.getTime())) {
+      // Ignore posts from the 'giscus' bot
+      if (post.author?.login === "giscus") {
+        return acc;
+      }
+
+      const date = parseDateString(post.createdAt);
+
+      if (!date) {
         console.warn("Invalid date on post:", post);
         return acc;
       }
@@ -42,7 +110,9 @@ const HomePage: FC = () => {
   }, [posts]);
 
   const sortedMonths = useMemo(() => {
-    return Object.keys(groupedPosts).sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
+    return Object.keys(groupedPosts).sort(
+      (a, b) => new Date(b).getTime() - new Date(a).getTime()
+    );
   }, [groupedPosts]);
 
   return (
